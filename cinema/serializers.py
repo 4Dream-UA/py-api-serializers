@@ -44,7 +44,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ("id", "title", "description", "genres", "actors")
+        fields = ("id", "title", "description", "duration", "genres", "actors")
 
     def get_genres(self, obj): # noqa -> unreal to do it static
         return obj.genres.values_list("name", flat=True)
